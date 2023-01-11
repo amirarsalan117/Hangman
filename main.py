@@ -10,13 +10,20 @@ answer_list = []
 
 for letter in chosen_word:
     answer_list.append('-')
-    
+
 
 #Step3: Get User input and if the guess is true replace it with the answar list  selected position
-user_input = input("Enter a letter: ")
-for i in range(len(answer_list)):
-    if user_input == chosen_word[i]:
-        del answer_list[i]
-        answer_list.insert(i,user_input)
-            
-print(answer_list)
+game_is_over = False
+while not game_is_over:
+    print('-----------')
+    print(answer_list)
+    print('-----------')
+    if '-' not in answer_list:
+        game_is_over = True
+    else:
+        user_input = input("Enter a letter: ")
+        for i in range(len(answer_list)):
+            if user_input == chosen_word[i]:
+                del answer_list[i]
+                answer_list.insert(i,user_input)
+                
