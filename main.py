@@ -1,4 +1,4 @@
-
+from logo import HANGMANPICS
 import random
 
 words = ['apple', 'pie', 'salam']
@@ -12,7 +12,8 @@ for letter in chosen_word:
     answer_list.append('-')
 
 guess_is_correct = False
-live = 5
+live = 7
+count = 0
 game_is_over = False
 while not game_is_over:
  
@@ -41,4 +42,6 @@ while not game_is_over:
             guess_is_correct = False
         elif guess_is_correct == False:
             live -=1
+            print(HANGMANPICS[count])
+            count +=1
     
